@@ -26,13 +26,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::get('restaurant', [RestaurantController::class, 'index']);
 
 require __DIR__.'/auth.php';
 
 Route::get('/user/configuracion', [UserController::class,'config'])->middleware(['auth'])->name('user.config');
 Route::post('/user/update', [UserController::class,'update'])->middleware(['auth'])->name('user.update');
 
+Route::get('/restaurant', [RestaurantController::class, 'index'])->name('restaurant.index');
 
+Route::get('/food', [FoodController::class, 'index'])->name('food.index');
 
-
+Route::get('/order', [OrderController::class, 'index'])->name('order.index');

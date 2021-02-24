@@ -9,6 +9,8 @@ class Food extends Model
 {
     use HasFactory;
 
+    protected $table = 'Foods';
+
     /**
      * Get the Restaurant that owns the Food
      *

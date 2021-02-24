@@ -9,6 +9,8 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $table = 'Orders';
+
     /**
      * Get all of the Users for the Order
      *

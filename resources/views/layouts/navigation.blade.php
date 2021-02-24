@@ -16,12 +16,16 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     {{-- RETOCAR --}}
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('restaurant.index')" :active="request()->routeIs('restaurant.index')">
                         {{ __('Restaurantes') }}
                      </x-nav-link>
 
-                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                     {{ __('Upload Image') }}
+                     <x-nav-link :href="route('food.index')" :active="request()->routeIs('food.index')">
+                        {{ __('Platos') }}
+                     </x-nav-link>
+
+                     <x-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')">
+                        {{ __('Pedidos') }}
                     </x-nav-link>
                 </div>
             </div>
