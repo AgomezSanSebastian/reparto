@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Restaurant;
-use App\Models\Food;
-use App\Models\Order;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +30,9 @@ Route::get('restaurant', [RestaurantController::class, 'index']);
 
 require __DIR__.'/auth.php';
 
-Route::get('/user/configuracion', [UserController::class,'config'])->middleware(['auth'])->name('config');
+Route::get('/user/configuracion', [UserController::class,'config'])->middleware(['auth'])->name('user.config');
 Route::post('/user/update', [UserController::class,'update'])->middleware(['auth'])->name('user.update');
-Route::get('/user/profile/{id}', [UserController::class,'profile'])->middleware(['auth'])->name('user.profile');
+
+
 
 

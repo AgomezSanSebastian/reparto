@@ -44,13 +44,8 @@
                     <x-slot name="content">
                         <!-- Mi perfil -->
                         <!-- Pendiente poner rutas -->
-                        <x-dropdown-link :href="route('config')">
+                        <x-dropdown-link :href="route('user.config')">
                             {{ __('Mi perfil') }}
-                         </x-dropdown-link>
-
-                         <!-- Configuración -->
-                        <x-dropdown-link :href="route('user.profile',['id' => Auth::user()->id])">
-                            {{ __('User Configuration') }}
                          </x-dropdown-link>
 
                         <!-- Authentication -->

@@ -62,7 +62,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('config')->with(['status'=>'Configuración modificada con éxito']);
+        return redirect()->route('user.config')->with(['status'=>'Configuración modificada con éxito']);
     }
 
     /**
@@ -76,11 +76,5 @@ class UserController extends Controller
     //     return new Response($file, 200);
     // }
 
-    public function profile($id){
-        $user = User::find($id);
-        return view('user.profile',[
-            'user' => $user
-        ]);
 
-    }
 }

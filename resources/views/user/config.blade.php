@@ -26,9 +26,9 @@
 
                           <!-- Surname -->
                           <div class="mt-4">
-                             <x-label for="surname" :value="__('Surname')" />
+                             <x-label for="surnames" :value="__('Surname')" />
 
-                             <x-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="Auth::user()->surname " required />
+                             <x-input id="surnames" class="block mt-1 w-full" type="text" name="surnames" :value="Auth::user()->surnames" required />
                           </div>
 
                           <!-- Email Address -->
