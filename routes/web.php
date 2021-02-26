@@ -33,7 +33,19 @@ Route::get('/user/configuracion', [UserController::class,'config'])->middleware(
 Route::post('/user/update', [UserController::class,'update'])->middleware(['auth'])->name('user.update');
 
 Route::get('/restaurant', [RestaurantController::class, 'index'])->name('restaurant.index');
+Route::get('/restaurant/file/{filename}', [RestaurantController::class,'getImage'])->name('restaurant.file');
 
 Route::get('/food', [FoodController::class, 'index'])->name('food.index');
+Route::get('food/{food}' ,[FoodController::class, 'show'])
+    ->where('food', '[0-9]+')
+    ->name('food.show');
+Route::get('food/new', [FoodController::class, 'new'])->name('food.new');
+Route::post('food', [FoodController::class, 'store'])->name('food.store');
+Route::get('food/{food}/edit', [FoodController::class,'edit'])
+    ->where('food', '[0-9]+')
+    ->name('food.edit');
+Route::put('food/{food}', [FoodController::class, 'update'])->name('food.update');
+Route::delete('food/{food}', [FoodController::class, 'destroy'])->name('food.destroy');
+
 
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');

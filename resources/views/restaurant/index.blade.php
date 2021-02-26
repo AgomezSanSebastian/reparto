@@ -1,21 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Restaurantes') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <ul>
-                        @foreach ($restaurantes as $restaurante)
-                            <li>{{$restaurante->name}}</li>
-                        @endforeach
-                    </ul>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mx-10 my-5">
+           @foreach ($restaurantes as $restaurante)
+                <div class="bg-blue-200">
+                    {{-- <img alt="Placeholder" class="object-scale-down h-auto w-full" src="{{ route('restaurant.file', ['filename'=>$restaurante->image_path])}}"> --}}
+                    <img src="{{Storage::url($restaurante->image_path)}}">
+                    {{$restaurante}}
                 </div>
-            </div>
+           @endforeach
+
         </div>
     </div>
 </x-app-layout>
