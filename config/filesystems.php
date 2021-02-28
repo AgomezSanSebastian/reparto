@@ -51,6 +51,21 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        // Disco que almacenará las imágenes de los usuarios
+            'users' => [
+            'driver' => 'local',
+            'root' => storage_path('app/users'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+     ],
+
+     // Disco que almacenará las imágenes subidas por los usuarios
+     'images' => [
+        'driver' => 'local',
+        'root' => storage_path('app/images'),
+        'url' => env('APP_URL') . '/storage',
+        'visibility' => 'public',
+     ],
 
     ],
 
