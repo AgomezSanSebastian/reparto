@@ -22,12 +22,12 @@ class Order extends Model
     }
 
     /**
-     * Get all of the Foods for the Order
+     * Get the Order_detail that owns the Order
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Foods()
+    public function Order_detail()
     {
-        return $this->hasMany(Food::class);
+        return $this->belongsTo(Order_details::class, 'order_details_id');
     }
 }

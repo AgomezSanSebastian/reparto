@@ -15,7 +15,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Inicio') }}
                     </x-nav-link>
-                    {{-- RETOCAR --}}
+
                     <x-nav-link :href="route('restaurant.index')" :active="request()->routeIs('restaurant.index')">
                         {{ __('Restaurantes') }}
                      </x-nav-link>
@@ -26,6 +26,10 @@
 
                      <x-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')">
                         {{ __('Pedidos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('tiempo.index')" :active="request()->routeIs('tiempo.index')">
+                        {{__('Tiempo')}}
                     </x-nav-link>
                 </div>
             </div>

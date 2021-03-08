@@ -16,6 +16,15 @@ class FoodController extends Controller
         return view('food.index',compact('foods'));
     }
 
+
+    public function customindex(Request $request){
+        $buscar = $request->buscaporcomida;
+
+        $foods = Food::where('name','LIKE','%'.$buscar.'%')->paginate(5);
+
+        return view('food.index', compact('foods'));
+    }
+
     public function show(Food $food){
         return view('food.show', compact('food'));
     }
@@ -73,7 +82,7 @@ class FoodController extends Controller
 
         $food->save();
 
-        return redirect()->route('food.show',$food);
+        return redirect()->route('food.index',$food);
     }
 
     public function destroy(Food $food) {

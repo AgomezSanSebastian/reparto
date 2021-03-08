@@ -39,7 +39,7 @@ class RestaurantSeeder extends Seeder
             'name' => "Er Chiclanero",
             'street' => "Pablo Rada",
             'phone' => "959899562",
-            'image_path' => "rodriguez.jpg"
+            'image_path' => "erchiclanero.jpg"
         ]);
 
         DB::table('Restaurants')->insert([

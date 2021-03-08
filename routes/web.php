@@ -6,6 +6,8 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\OrderController;
+use App\Models\Weather;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,9 @@ use App\Http\Controllers\OrderController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 
 Route::get('/', function () {
     return view('auth.login');})->middleware('guest');
@@ -46,6 +51,24 @@ Route::get('food/{food}/edit', [FoodController::class,'edit'])
     ->name('food.edit');
 Route::put('food/{food}', [FoodController::class, 'update'])->name('food.update');
 Route::delete('food/{food}', [FoodController::class, 'destroy'])->name('food.destroy');
+Route::get('food/customindex', [FoodController::class, 'customindex'])->name('food.customindex');
 
 
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+Route::get('order/{order}',[OrderController::class, 'show'])
+    ->where('order', '[0-9]+')
+    ->name('order.show');
+Route::get('order/create', [OrderController::class, 'create'])->name('order.create');
+Route::post('order', [OrderController::class, 'store'])->name('order.store');
+Route::get('order/{order}/edit', [OrderController::class, 'edit'])->name('order.edit');
+Route::put('order/{order}', [OrderController::class, 'update'])->name('order.update');
+
+
+
+Route::get('tiempo', function () {
+    $url = 'https://www.el-tiempo.net/api/json/v2/provincias/21/municipios';
+    $tiempos = Weather::get();
+     Http::get($url)->json();
+
+    return view('tiempo',$tiempos);
+})->name('tiempo.index');
