@@ -6,8 +6,12 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\WeatherController;
 use App\Models\Weather;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +69,4 @@ Route::put('order/{order}', [OrderController::class, 'update'])->name('order.upd
 
 
 
-Route::get('tiempo', function () {
-    $url = 'https://www.el-tiempo.net/api/json/v2/provincias/21/municipios';
-    $tiempos = Weather::get();
-     Http::get($url)->json();
-
-    return view('tiempo',$tiempos);
-})->name('tiempo.index');
+Route::get('tiempo', [WeatherController::class, 'index'] )->name('tiempo.index');

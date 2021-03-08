@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Weather;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
 
 class WeatherController extends Controller
 {
@@ -14,7 +16,17 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        //
+        $cliente = new Client([
+            'base_uri' => 'https://www.el-tiempo.net/api/json/v2/provincias/21',
+            // 'base_uri' => 'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/huelva',
+        ]);
+
+        $response = $cliente->request('GET');
+        // var_dump($response);
+        $we = json_decode( $response->getBody()->getContents());
+        // var_dump($we);
+
+        return view('tiempo' ,compact('we'));
     }
 
     /**
