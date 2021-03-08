@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +20,8 @@ class FoodSeeder extends Seeder
             'description' => "Hamburguesa de cerdo con tomate",
             'restaurant_id' => "5",
             'price' => "1.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -26,6 +29,8 @@ class FoodSeeder extends Seeder
             'description' => "Cochinito con tomate",
             'restaurant_id' => "5",
             'price' => "1.50",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -33,6 +38,8 @@ class FoodSeeder extends Seeder
             'description' => "Rica comida fresca",
             'restaurant_id' => "2",
             'price' => "12.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -40,6 +47,8 @@ class FoodSeeder extends Seeder
             'description' => "Gambas frescas de las costas de Huelva",
             'restaurant_id' => "4",
             'price' => "9.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -47,6 +56,8 @@ class FoodSeeder extends Seeder
             'description' => "Comida para que te entre el gusanillo",
             'restaurant_id' => "3",
             'price' => "4.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -54,6 +65,8 @@ class FoodSeeder extends Seeder
             'description' => "Saborea lo tradicional",
             'restaurant_id' => "3",
             'price' => "4.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -61,6 +74,8 @@ class FoodSeeder extends Seeder
             'description' => "Saborea lo iberico",
             'restaurant_id' => "3",
             'price' => "9.00",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -68,6 +83,8 @@ class FoodSeeder extends Seeder
             'description' => "Hamburguesa, patatas y refresco",
             'restaurant_id' => "1",
             'price' => "3.90",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         DB::table('Foods')->insert([
@@ -75,6 +92,8 @@ class FoodSeeder extends Seeder
             'description' => "Hamburguesa doble con queso y pepinillo",
             'restaurant_id' => "1",
             'price' => "5.20",
+            'created_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' =>  Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
 

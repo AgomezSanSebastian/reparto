@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use App\Models\Restaurant;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Validated;
 
 class FoodController extends Controller
@@ -55,7 +56,7 @@ class FoodController extends Controller
 
         $food->save();
 
-        return redirect()->route('food.show',$food);
+        return redirect()->route('food.index',$food);
     }
 
     /**
@@ -78,7 +79,7 @@ class FoodController extends Controller
         $food->name = $request->name;
         $food->description = $request->description;
         $food->restaurant_id = $request->restaurant_id;
-        $food->price = $request->price;
+        $food->price = $request->price;       
 
         $food->save();
 

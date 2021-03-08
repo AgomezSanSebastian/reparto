@@ -35,8 +35,8 @@
                     <td > </td>
                     <td > </td>
                     <td >
-                        <?php $total = $total + $order->total;
-                         echo $total;
+                        <?php 
+                         echo $order->total;
                          ?>
                     </td>
                 </tr>
